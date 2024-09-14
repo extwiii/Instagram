@@ -4,26 +4,24 @@ import FontAwesome from '@expo/vector-icons/FontAwesome'
 export default function TabsLayout() {
   return (
     <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: 'black',
-        tabBarShowLabel: false,
-      }}
+      screenOptions={{ tabBarActiveTintColor: 'black', tabBarShowLabel: false }}
     >
       <Tabs.Screen
         name="index"
         options={{
           title: 'For you',
           tabBarIcon: ({ color }) => (
-            <FontAwesome size={28} name="home" color={color} />
+            <FontAwesome name="home" size={26} color={color} />
           ),
         }}
       />
+
       <Tabs.Screen
         name="new"
         options={{
-          title: 'New post',
+          title: 'Create post',
           tabBarIcon: ({ color }) => (
-            <FontAwesome size={28} name="plus-square-o" color={color} />
+            <FontAwesome name="plus-square-o" size={26} color={color} />
           ),
         }}
       />
@@ -33,7 +31,7 @@ export default function TabsLayout() {
         options={{
           title: 'Profile',
           tabBarIcon: ({ color }) => (
-            <FontAwesome size={28} name="user" color={color} />
+            <FontAwesome name="user" size={26} color={color} />
           ),
         }}
       />

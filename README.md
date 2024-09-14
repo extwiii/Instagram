@@ -13,3 +13,8 @@ After installation, we will see Welcome to Expo (SS)
 4 - Add src/app folder and create very first files and link them together with Link from expo-router (SS)
 5 - Create the Root Layout
 Finding right expo icon, visit https://icons.expo.fyi
+
+--------------------- First commit --------------------
+
+6 - Installing NativeWind -> https://www.nativewind.dev/quick-starts/expo
+Add typescript support -> https://www.nativewind.dev/getting-started/typescript
