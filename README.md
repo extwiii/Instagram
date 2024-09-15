@@ -1,3 +1,7 @@
+# Documentation
+
+## UI - React Native / Expo
+
 1 - Use create expo command and select blank ts template (SS)
 2 - Installing expo router. Follow manual installation steps here -> https://docs.expo.dev/router/installation/#manual-installation
 After installation, we will see Welcome to Expo (SS)
@@ -78,7 +82,35 @@ NativeWindStyleSheet.setOutput({
 
 --------------------- Forth commit --------------------
 
-12 - Update app/(tab)/profile
+14 - Update app/(tab)/profile
+
+--------------------- Fifth commit --------------------
+
+15 - Follow Assets - Cloudinary steps 1 and 2
+16 - Create .env file with below data and update .gitignore with .env file
+
+```
+EXPO_PUBLIC_CLOUDINARY_CLOUD_NAME=<your-cloud-name>
+```
+
+17 - Initiate your Cloudinary account in lib/cloudinary.ts file
+
+```
+import { Cloudinary } from '@cloudinary/url-gen'
+
+export const cld = new Cloudinary({
+  cloud: {
+    cloudName: process.env.EXPO_PUBLIC_CLOUDINARY_CLOUD_NAME,
+  },
+})
+```
+
+18 - Update PostListItem to use cloudinary service
+
+## Assets - Cloudinary
+
+1 - Go and create an account -> https://cloudinary.com/
+2 - Follow documentation -> https://cloudinary.com/documentation/react_native_integration#get_started_with_react_native
 
 # MISC
 

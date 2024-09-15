@@ -28,7 +28,7 @@ export default function CreatePost() {
   }
 
   return (
-    <View className="p-3 items-center flex-1">
+    <View className="p-3 flex-1 w-full max-w-lg items-center self-center">
       {/* Image picker */}
       {image ? (
         <Image

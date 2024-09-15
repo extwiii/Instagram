@@ -22,7 +22,7 @@ export default function ProfileScreen() {
   }
 
   return (
-    <View className="p-3 flex-1">
+    <View className="p-3 flex-1 w-full max-w-lg self-center">
       {/* Avatar image picker */}
       {image ? (
         <Image
@@ -30,7 +30,7 @@ export default function ProfileScreen() {
           className="w-52 aspect-square self-center rounded-full bg-slate-300"
         />
       ) : (
-        <View className="w-52 aspect-square  self-center rounded-full bg-slate-300" />
+        <View className="w-52 aspect-square self-center rounded-full bg-slate-300" />
       )}
       <Text
         onPress={pickImage}
