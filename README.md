@@ -138,6 +138,12 @@ EXPO_PUBLIC_SUPABASE_ANON_KEY=<your-anon-key>
 
 --------------------- Eighth commit --------------------
 
+26 - Follow BE - Supabase steps 5, 6, 7, 8 and 9
+27 - Update (tabs)/new file to insert created posts to supabase posts table
+28 - Update (tabs)/index to fecth posts from supabse and pull to fetch
+
+--------------------- Ninth commit --------------------
+
 ## Assets - Cloudinary
 
 1 - Go and create an account -> https://cloudinary.com/
@@ -165,6 +171,18 @@ It will create a profile table, its policies and a trigger to create an profile 
 
 4 - Go Authentication -> Providers -> Email and disable Confirm email option and SAVE to let user to signup without confirming their emails
 
+5 - Go Table Editor and click Create a new table for our posts, name it posts and add required fields and link to profile tables. Please see below SS
+
+6 - By default noone allow to do anything with this table, so Need to add some policy to let people use it.
+7 - Go to table editor -> posts and then click Add RLS Policy (Role level security) from top right and then click Creat policy from top right too.
+8 - Then select Enable insert for authenticated users only from right section for posts table and then click Save policy
+9 - Follow step 8 to create new policy from that table and select Enable read access for all users and then click Save policy
+
 # MISC
 
 - List of app using Expo -> https://evanbacon.dev/blog/expo-2024
+
+# Credit
+
+- Youtube 1/2 link -> https://www.youtube.com/watch?v=CRIMOPhiWG8
+- Youtube 2/2 link -> https://www.youtube.com/watch?v=Ili2xq9FXVo
