@@ -18,3 +18,51 @@ Finding right expo icon, visit https://icons.expo.fyi
 
 6 - Installing NativeWind -> https://www.nativewind.dev/quick-starts/expo
 Add typescript support -> https://www.nativewind.dev/getting-started/typescript
+
+--------------------- Second commit --------------------
+
+7 - Creating some mock data for our posts. Create a file under assests
+data/posts.json with below object, generate more than one.
+
+```
+[
+  {
+    "id": "1",
+    "image": "samples/landscapes/beach-boat",
+    "image_url": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/1.jpg",
+    "caption": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic repellendus unde blanditiis. Eos fugiat dolorem ea fugit aut sapiente corrupti autem dolores deleniti architecto, omnis, amet unde dignissimos quam minima?",
+    "user": {
+      "id": "u1",
+      "avatar_url": "samples/people/boy-snow-hoodie",
+      "image_url": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/2.jpg",
+      "username": "vadimnotjustdev"
+    }
+  },
+]
+```
+
+Then import posts.json inside app/(tabs)/index.tsx
+
+8 - To make it more readable and remove all ../.. syntax, update tsconfig.json file something like below;
+
+```
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["*"]
+    }
+  }
+}
+```
+
+9 - Create PostListItem component under components folder
+10 - Use FlatList to render PostListItem component and rencer mock data
+
+--------------------- Third commit --------------------
+
+# MISC
+
+- List of app using Expo -> https://evanbacon.dev/blog/expo-2024
