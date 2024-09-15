@@ -107,10 +107,33 @@ export const cld = new Cloudinary({
 
 18 - Update PostListItem to use cloudinary service
 
+--------------------- Sixth commit --------------------
+
+19 - Create upload image function, then Assets - Cloudinary step 3
+upload_preset should match with preset created at Cloudinary
+
+```
+const options = {
+  upload_preset: 'Default',
+  unsigned: true,
+};
+```
+
+20 - Test upload file function and see public_id in the console
+
+--------------------- Seventh commit --------------------
+
 ## Assets - Cloudinary
 
 1 - Go and create an account -> https://cloudinary.com/
 2 - Follow documentation -> https://cloudinary.com/documentation/react_native_integration#get_started_with_react_native
+3 - Go settings/Upload Presets and create one for unsigned uploads
+
+```
+name: Dafult
+signing mode: unsigned
+Asset folder: posts
+```
 
 # MISC
 
