@@ -63,6 +63,23 @@ Then import posts.json inside app/(tabs)/index.tsx
 
 --------------------- Third commit --------------------
 
+11 - Make sure to add below code to root layout to make sure nativewind is working on web version of Expo. Please read -> https://github.com/nativewind/nativewind/issues/470
+
+```
+import { NativeWindStyleSheet } from "nativewind";
+
+NativeWindStyleSheet.setOutput({
+  default: "native",
+});
+```
+
+12 - Update app/(tab)/new file
+13 - Installing image picker -> https://docs.expo.dev/versions/latest/sdk/imagepicker/
+
+--------------------- Forth commit --------------------
+
+12 - Update app/(tab)/profile
+
 # MISC
 
 - List of app using Expo -> https://evanbacon.dev/blog/expo-2024
