@@ -123,6 +123,21 @@ const options = {
 
 --------------------- Seventh commit --------------------
 
+21 - Follow BE - Supabase steps 1, 2, 3 and 4
+22 - Set up Supabase, create a lib file, update .env file.
+Go to project Setting -> API on Supabase dashboard to find below keys
+
+```
+EXPO_PUBLIC_SUPABASE_URL=<your-url>
+EXPO_PUBLIC_SUPABASE_ANON_KEY=<your-anon-key>
+```
+
+23 - Create (auth) folder and its files under src, next to (tabs)
+24 - Create AuthProvider to wrap our (auth)/\_layout and redirect user to (tabs) if authenticated
+25 - Update all layout and index files to render auth first, let user sign in then redirect user to tabs.
+
+--------------------- Eighth commit --------------------
+
 ## Assets - Cloudinary
 
 1 - Go and create an account -> https://cloudinary.com/
@@ -134,6 +149,21 @@ name: Dafult
 signing mode: unsigned
 Asset folder: posts
 ```
+
+## BE - Supabase (Authentication, Database and API Layers)
+
+1 - Setting up Supabase -> https://supabase.com/docs/guides/getting-started/tutorials/with-expo-react-native
+
+2 - From documentation, Install below, skip @rneui/themed
+
+```
+npx expo install @supabase/supabase-js @react-native-async-storage/async-storage
+```
+
+3 - Go to SQL Editor -> QuickStarts and select User Management starter and click RUN
+It will create a profile table, its policies and a trigger to create an profile whenever user create an account
+
+4 - Go Authentication -> Providers -> Email and disable Confirm email option and SAVE to let user to signup without confirming their emails
 
 # MISC
 
