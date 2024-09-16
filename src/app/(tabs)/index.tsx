@@ -1,12 +1,15 @@
 import { useEffect, useState } from 'react'
 import { Alert, FlatList } from 'react-native'
-import posts from '@/assets/data/posts.json'
+import mockPosts from '@/assets/data/posts.json'
 import PostListItem from '@/src/components/PostListItem'
 import { supabase } from '@/src/lib/supabase'
+import { useAuth } from '@/src/providers/AuthProvider'
 
 export default function FeedScreen() {
   const [posts, setPosts] = useState<any>([])
   const [loading, setLoading] = useState(false)
+
+  const { user } = useAuth()
 
   useEffect(() => {
     fetchPosts()
@@ -17,6 +20,7 @@ export default function FeedScreen() {
     let { data, error } = await supabase
       .from('posts')
       .select('*, user:profiles(*)')
+      // .eq('user_id', user?.id) // show only my posts
       .order('created_at', { ascending: false })
     if (error) {
       Alert.alert('Something went wrong')
@@ -27,7 +31,7 @@ export default function FeedScreen() {
 
   return (
     <FlatList
-      data={posts}
+      data={[...posts, ...mockPosts]}
       renderItem={({ item }) => <PostListItem post={item} />}
       contentContainerStyle={{
         gap: 10,

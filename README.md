@@ -1,3 +1,11 @@
+# Stacks
+
+- React Native / Expo
+- Typescript
+- Nativewind
+- Cloudinary
+- Supabase
+
 # Documentation
 
 ## UI - React Native / Expo
@@ -181,6 +189,7 @@ It will create a profile table, its policies and a trigger to create an profile 
 # MISC
 
 - List of app using Expo -> https://evanbacon.dev/blog/expo-2024
+- Bottom Sheet Component -> https://github.com/gorhom/react-native-bottom-sheet
 
 # Credit
 
