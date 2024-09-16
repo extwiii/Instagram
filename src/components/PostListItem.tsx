@@ -1,36 +1,19 @@
-import { View, Text, useWindowDimensions } from 'react-native'
+import { View, Text } from 'react-native'
 import { Ionicons, Feather, AntDesign } from '@expo/vector-icons'
-
-import { AdvancedImage, AdvancedVideo } from 'cloudinary-react-native'
-// Import required actions and qualifiers.
+import { AdvancedImage } from 'cloudinary-react-native'
 import { thumbnail } from '@cloudinary/url-gen/actions/resize'
 import { focusOn } from '@cloudinary/url-gen/qualifiers/gravity'
 import { FocusOn } from '@cloudinary/url-gen/qualifiers/focusOn'
-import { ResizeMode, Video } from 'expo-av'
 
 import { cld } from '@/src/lib/cloudinary'
 
-type Post = {
-  image: string
-  user: {
-    avatar_url: string
-    username: string
-  }
-  media_type: 'image' | 'video'
-}
+import PostContent, { Post } from './PostContent'
 
 export default function PostListItem({ post }: { post: Post }) {
-  const { width } = useWindowDimensions()
-
-  const image = cld.image(post.image)
-  image.resize(thumbnail().width(width).height(width))
-
   const avatar = cld.image(post.user.avatar_url || 'avatar_fwm2gr')
   avatar.resize(
     thumbnail().width(48).height(48).gravity(focusOn(FocusOn.face()))
   )
-
-  const video = cld.video(post.image)
 
   return (
     <View className="bg-white">
@@ -46,25 +29,7 @@ export default function PostListItem({ post }: { post: Post }) {
       </View>
 
       {/* Content */}
-      {post.media_type === 'image' ? (
-        <AdvancedImage cldImg={image} className="w-full aspect-[4/3]" />
-      ) : (
-        // <AdvancedVideo
-        //   cldVideo={video}
-        //   videoStyle={{ width: '100%', aspectRatio: 4 / 3 }}
-        // />
-        <Video
-          className="w-52 aspect-[3/4] rounded-sm bg-slate-300"
-          style={{ width: '100%', aspectRatio: 16 / 9 }}
-          source={{
-            uri: video.toURL(),
-          }}
-          useNativeControls
-          resizeMode={ResizeMode.CONTAIN}
-          isLooping
-          // shouldPlay
-        />
-      )}
+      <PostContent post={post} />
 
       {/* Icons */}
       <View className="flex-row">
