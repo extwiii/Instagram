@@ -164,6 +164,26 @@ EXPO_PUBLIC_SUPABASE_ANON_KEY=<your-anon-key>
 
 --------------------- Twelfth commit --------------------
 
+32 - Update app.json to reflect light/dark mode changes. Check how to use dark mode in nativewind to implement it.
+
+```
+  "userInterfaceStyle": "automatic",
+```
+
+33 - Video feature uses https://docs.expo.dev/versions/latest/sdk/av/, go and follow installation steps. Usage: https://docs.expo.dev/versions/latest/sdk/video-av/#usage
+
+Troubleshooting: Cloudinary already use expo-av and may not need to import, installing may cause a problem. Make sure to use "tailwindcss": "3.3.2", without ^ character
+
+34 - Update (tabs)/new screen to accept video type, use expo-av package to render selected video on the screen.
+
+35 - Update Cloudinary upload function to accept video type
+
+36 - To understand type of posts on feed screen, add new column called media_type to posts table and set its type to Text and also set default value to image
+
+37 - Update PostListItem component to render video type correctly
+
+--------------------- Thirteenth commit --------------------
+
 ## Assets - Cloudinary
 
 1 - Go and create an account -> https://cloudinary.com/

@@ -1,11 +1,12 @@
 import { View, Text, useWindowDimensions } from 'react-native'
 import { Ionicons, Feather, AntDesign } from '@expo/vector-icons'
 
-import { AdvancedImage } from 'cloudinary-react-native'
+import { AdvancedImage, AdvancedVideo } from 'cloudinary-react-native'
 // Import required actions and qualifiers.
 import { thumbnail } from '@cloudinary/url-gen/actions/resize'
 import { focusOn } from '@cloudinary/url-gen/qualifiers/gravity'
 import { FocusOn } from '@cloudinary/url-gen/qualifiers/focusOn'
+import { ResizeMode, Video } from 'expo-av'
 
 import { cld } from '@/src/lib/cloudinary'
 
@@ -15,6 +16,7 @@ type Post = {
     avatar_url: string
     username: string
   }
+  media_type: 'image' | 'video'
 }
 
 export default function PostListItem({ post }: { post: Post }) {
@@ -27,6 +29,8 @@ export default function PostListItem({ post }: { post: Post }) {
   avatar.resize(
     thumbnail().width(48).height(48).gravity(focusOn(FocusOn.face()))
   )
+
+  const video = cld.video(post.image)
 
   return (
     <View className="bg-white">
@@ -42,7 +46,25 @@ export default function PostListItem({ post }: { post: Post }) {
       </View>
 
       {/* Content */}
-      <AdvancedImage cldImg={image} className="w-full aspect-[4/3]" />
+      {post.media_type === 'image' ? (
+        <AdvancedImage cldImg={image} className="w-full aspect-[4/3]" />
+      ) : (
+        // <AdvancedVideo
+        //   cldVideo={video}
+        //   videoStyle={{ width: '100%', aspectRatio: 4 / 3 }}
+        // />
+        <Video
+          className="w-52 aspect-[3/4] rounded-sm bg-slate-300"
+          style={{ width: '100%', aspectRatio: 16 / 9 }}
+          source={{
+            uri: video.toURL(),
+          }}
+          useNativeControls
+          resizeMode={ResizeMode.CONTAIN}
+          isLooping
+          // shouldPlay
+        />
+      )}
 
       {/* Icons */}
       <View className="flex-row">

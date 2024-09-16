@@ -9,7 +9,8 @@
       "avatar_url": "samples/people/boy-snow-hoodie",
       "image_url": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/2.jpg",
       "username": "johnDoe"
-    }
+    },
+    "media_type": "image"
   },
   {
     "id": "100002",
@@ -21,7 +22,8 @@
       "avatar_url": "samples/people/smiling-man",
       "image_url": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/2.jpg",
       "username": "johnDoe"
-    }
+    },
+    "media_type": "image"
   },
   {
     "id": "100003",
@@ -33,7 +35,8 @@
       "avatar_url": "samples/bike",
       "image_url": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/3.jpg",
       "username": "johnDoe"
-    }
+    },
+    "media_type": "image"
   },
   {
     "id": "100004",
@@ -45,7 +48,8 @@
       "avatar_url": "samples/animals/cat",
       "image_url": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/4.jpg",
       "username": "johnDoe"
-    }
+    },
+    "media_type": "image"
   },
   {
     "id": "100005",
@@ -57,6 +61,7 @@
       "avatar_url": "samples/animals/cat",
       "image_url": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/4.jpg",
       "username": "johnDoe"
-    }
+    },
+    "media_type": "image"
   }
 ]
