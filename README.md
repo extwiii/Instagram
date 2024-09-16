@@ -152,6 +152,14 @@ EXPO_PUBLIC_SUPABASE_ANON_KEY=<your-anon-key>
 
 --------------------- Ninth commit --------------------
 
+29 - Go to Cloudinary dashboard and click Media Library, upload an avatar for user who has no avatar image yet, copy public id from that avatar and use that as a fallback
+
+--------------------- Tenth commit --------------------
+
+30 - Update profile page to render username when selected and let user to update username.Also bio section added in the code as well as in the profiles table in Supabase.
+
+--------------------- Eleventh commit --------------------
+
 ## Assets - Cloudinary
 
 1 - Go and create an account -> https://cloudinary.com/
