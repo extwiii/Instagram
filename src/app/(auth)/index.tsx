@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Alert, StyleSheet, View, AppState, TextInput } from 'react-native'
+import { Alert, View, AppState, TextInput } from 'react-native'
 import Button from '@/src/components/Button'
 import { supabase } from '@/src/lib/supabase'
 
@@ -47,8 +47,8 @@ export default function Auth() {
   }
 
   return (
-    <View style={styles.container}>
-      <View style={[styles.verticallySpaced, styles.mt20]}>
+    <View className="mt-64 p-3">
+      <View>
         <TextInput
           onChangeText={(text) => setEmail(text)}
           value={email}
@@ -57,7 +57,7 @@ export default function Auth() {
           className="border border-gray-300 p-3 rounded-md"
         />
       </View>
-      <View style={styles.verticallySpaced}>
+      <View className="mt-2">
         <TextInput
           onChangeText={(text) => setPassword(text)}
           value={password}
@@ -67,14 +67,14 @@ export default function Auth() {
           className="border border-gray-300 p-3 rounded-md"
         />
       </View>
-      <View style={[styles.verticallySpaced, styles.mt20]}>
+      <View className="mt-4">
         <Button
           title="Sign in"
           disabled={loading}
           onPress={() => signInWithEmail()}
         />
       </View>
-      <View style={styles.verticallySpaced}>
+      <View className="mt-2">
         <Button
           title="Sign up"
           disabled={loading}
@@ -84,18 +84,3 @@ export default function Auth() {
     </View>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    marginTop: 40,
-    padding: 12,
-  },
-  verticallySpaced: {
-    paddingTop: 4,
-    paddingBottom: 4,
-    alignSelf: 'stretch',
-  },
-  mt20: {
-    marginTop: 20,
-  },
-})

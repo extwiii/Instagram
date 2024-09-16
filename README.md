@@ -160,6 +160,10 @@ EXPO_PUBLIC_SUPABASE_ANON_KEY=<your-anon-key>
 
 --------------------- Eleventh commit --------------------
 
+31 - Update profile page to render avatar when user has one and let user to update avatar.
+
+--------------------- Twelfth commit --------------------
+
 ## Assets - Cloudinary
 
 1 - Go and create an account -> https://cloudinary.com/
