@@ -4,26 +4,8 @@ import { ResizeMode, Video } from 'expo-av'
 
 import { thumbnail, scale } from '@cloudinary/url-gen/actions/resize'
 
-import { cld } from '../lib/cloudinary'
-
-export type LikeRecord = {
-  id: number
-  created_at: string
-  post_id: number
-  user_id: string
-}
-
-export type Post = {
-  id: number
-  image: string
-  user: {
-    avatar_url: string
-    username: string
-  }
-  media_type: 'image' | 'video'
-  caption: string
-  my_likes: LikeRecord[]
-}
+import { cld } from '@/src/lib/cloudinary'
+import { Post } from '@/src/lib/types'
 
 export default function PostContent({ post }: { post: Post }) {
   const { width } = useWindowDimensions()
