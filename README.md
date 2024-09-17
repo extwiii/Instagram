@@ -194,6 +194,11 @@ Make sure to use "tailwindcss": "3.3.2", without ^ character if see some nativew
 
 --------------------- Fifteenth commit --------------------
 
+41 - Add likes count, username and caption to end of the post
+42 Use fetchPosts call to fetch likes of posts
+
+--------------------- Sixteenth commit --------------------
+
 ## Assets - Cloudinary
 
 1 - Go and create an account -> https://cloudinary.com/

@@ -6,6 +6,13 @@ import { thumbnail, scale } from '@cloudinary/url-gen/actions/resize'
 
 import { cld } from '../lib/cloudinary'
 
+export type LikeRecord = {
+  id: number
+  created_at: string
+  post_id: number
+  user_id: string
+}
+
 export type Post = {
   id: number
   image: string
@@ -14,6 +21,8 @@ export type Post = {
     username: string
   }
   media_type: 'image' | 'video'
+  caption: string
+  my_likes: LikeRecord[]
 }
 
 export default function PostContent({ post }: { post: Post }) {
