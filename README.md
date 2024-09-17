@@ -172,7 +172,8 @@ EXPO_PUBLIC_SUPABASE_ANON_KEY=<your-anon-key>
 
 33 - Video feature uses https://docs.expo.dev/versions/latest/sdk/av/, go and follow installation steps. Usage: https://docs.expo.dev/versions/latest/sdk/video-av/#usage
 
-Troubleshooting: Cloudinary already use expo-av and may not need to import, installing may cause a problem. Make sure to use "tailwindcss": "3.3.2", without ^ character
+Troubleshooting: Cloudinary already use expo-av and that creates a bug for us, make sure not install it if you use cloudinary packages, otherwise it will crush your app.
+Make sure to use "tailwindcss": "3.3.2", without ^ character if see some nativewind related errors.
 
 34 - Update (tabs)/new screen to accept video type, use expo-av package to render selected video on the screen.
 
@@ -183,6 +184,15 @@ Troubleshooting: Cloudinary already use expo-av and may not need to import, inst
 37 - Update PostListItem component to render video type correctly
 
 --------------------- Thirteenth commit --------------------
+
+38 - refactoring PostListItem component
+
+--------------------- Fourteenth commit --------------------
+
+39 - Follow BE - Supabase steps 10, 11 and 12
+40 - Update PostListItem to let user like, dislike posts. Fetch likes for post and update like icon if like exist within a post
+
+--------------------- Fifteenth commit --------------------
 
 ## Assets - Cloudinary
 
@@ -214,9 +224,12 @@ It will create a profile table, its policies and a trigger to create an profile 
 5 - Go Table Editor and click Create a new table for our posts, name it posts and add required fields and link to profile tables. Please see below SS
 
 6 - By default noone allow to do anything with this table, so Need to add some policy to let people use it.
-7 - Go to table editor -> posts and then click Add RLS Policy (Role level security) from top right and then click Creat policy from top right too.
+7 - Go to table editor -> posts ( or any table we want to edit ) and then click Add RLS Policy (Role level security) from top right and then click Creat policy from top right too.
 8 - Then select Enable insert for authenticated users only from right section for posts table and then click Save policy
 9 - Follow step 8 to create new policy from that table and select Enable read access for all users and then click Save policy
+10 - Go Table Editor and click Create a new table for our likes, name it likes and add required fields and link to profiles and posts tables. Please see below SS
+11 - Follow step 7, 8 and 9 for policy of likes
+12 - Also add delete policy for likes, to let people to remove their likes
 
 # MISC
 

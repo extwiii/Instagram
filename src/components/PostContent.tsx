@@ -7,6 +7,7 @@ import { thumbnail, scale } from '@cloudinary/url-gen/actions/resize'
 import { cld } from '../lib/cloudinary'
 
 export type Post = {
+  id: number
   image: string
   user: {
     avatar_url: string
