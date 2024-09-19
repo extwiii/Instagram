@@ -203,6 +203,13 @@ Make sure to use "tailwindcss": "3.3.2", without ^ character if see some nativew
 
 --------------------- Seventeenth commit --------------------
 
+44 - Follow Push Notification steps 2 and 3
+45 - Create PushNotificationProvider
+46 - Follow BE - Supabase step 13
+47 - Add util function to complete notification feature
+
+--------------------- Eighteenth commit --------------------
+
 ## Assets - Cloudinary
 
 1 - Go and create an account -> https://cloudinary.com/
@@ -239,6 +246,26 @@ It will create a profile table, its policies and a trigger to create an profile 
 10 - Go Table Editor and click Create a new table for our likes, name it likes and add required fields and link to profiles and posts tables. Please see below SS
 11 - Follow step 7, 8 and 9 for policy of likes
 12 - Also add delete policy for likes, to let people to remove their likes
+13 - Update profiles table to store token, so create a new column called `push_token`
+
+## Push Notification
+
+1 - Main documentation -> https://docs.expo.dev/versions/latest/sdk/notifications/
+
+2 - Follow this to setup push notification -> https://docs.expo.dev/push-notifications/push-notifications-setup
+
+3 - Follow this https://docs.expo.dev/build/setup/ and install eas globally
+
+```
+npm install -g eas-cli
+```
+
+4 - Then run `eas init` to generate projectId and update app.json
+5 - To test follow these steps -> https://docs.expo.dev/push-notifications/push-notifications-setup/#test-using-the-push-notifications-tool
+This is only work on a real device, not on simulator.
+Once scan QR code and run app on your phone, allow notification and check your console to see ExponentPushToken, Example -> `ExponentPushToken[sn7J-4PLPE0URqLIjcavT_]`
+After fill token, title and body, click send notification to see the notification on your phone. Please see SS.
+6 - Before going production, you have to follow Step 3 -> https://docs.expo.dev/push-notifications/push-notifications-setup/#get-credentials-for-development-builds
 
 # MISC
 

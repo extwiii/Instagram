@@ -8,22 +8,23 @@ import { FocusOn } from '@cloudinary/url-gen/qualifiers/focusOn'
 
 import { cld } from '@/src/lib/cloudinary'
 
-import PostContent from './PostContent'
 import { supabase } from '@/src/lib/supabase'
 import { useAuth } from '@/src/providers/AuthProvider'
 import { Post, LikeRecord } from '@/src/lib/types'
+
+import PostContent from './PostContent'
+import { sendLikeNotification } from '../utils/notifications'
 
 const DOUBLE_PRESS_DELAY = 500
 
 export default function PostListItem({ post }: { post: Post }) {
   const [isLiked, setIsLiked] = useState(false)
   const [likeRecord, setLikeRecord] = useState<LikeRecord | null>(null)
-  const [postLikes, setPostLikes] = useState(post.likes?.[0]?.count || 0)
   const [lastPressed, setLastPressed] = useState(0)
   const { user } = useAuth()
 
   useEffect(() => {
-    if (post?.my_likes?.length > 0) {
+    if (post.my_likes.length > 0) {
       setLikeRecord(post.my_likes[0])
       setIsLiked(true)
     }
@@ -32,12 +33,8 @@ export default function PostListItem({ post }: { post: Post }) {
   useEffect(() => {
     if (isLiked) {
       saveLike()
-      setPostLikes(postLikes + 1)
     } else {
       deleteLike()
-      if (postLikes > 0) {
-        setPostLikes(postLikes - 1)
-      }
     }
   }, [isLiked])
 
@@ -45,12 +42,15 @@ export default function PostListItem({ post }: { post: Post }) {
     if (likeRecord) {
       return
     }
-    const { data }: { data: LikeRecord | null } = await supabase
+    const { data } = await supabase
       .from('likes')
       .insert([{ user_id: user?.id, post_id: post.id }])
+      .select()
       .single()
 
-    data && setLikeRecord(data)
+    // send notification to the owner of that post
+    sendLikeNotification(data)
+    setLikeRecord(data)
   }
 
   const deleteLike = async () => {
@@ -97,7 +97,6 @@ export default function PostListItem({ post }: { post: Post }) {
         </View>
 
         {/* Content */}
-        {/* TODO: Double tab to like */}
         <PostContent post={post} />
 
         {/* Icons */}
@@ -118,10 +117,12 @@ export default function PostListItem({ post }: { post: Post }) {
           </View>
         </View>
         <View className="px-3 gap-1">
-          <Text className="font-semibold">{postLikes} likes</Text>
+          <Text className="font-semibold">
+            {post.likes?.[0]?.count || 0} likes
+          </Text>
           <Text>
             <Text className="font-semibold">
-              {post.user.username || 'New user'}{' '}
+              {post.user.username || 'New user'}
             </Text>
             {post.caption}
           </Text>

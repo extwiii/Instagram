@@ -19,3 +19,13 @@ export type Post = {
     count: number
   }[]
 }
+
+export type MessageType = {
+  to: any
+  sound: string
+  title: string
+  body: string
+  data: {
+    postId: any
+  }
+}
