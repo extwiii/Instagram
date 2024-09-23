@@ -11,8 +11,15 @@
 ## UI - React Native / Expo
 
 1 - Use create expo command and select blank ts template (SS)
+
+<img width="593" alt="Screenshot 2024-09-13 at 22 44 43" src="https://github.com/user-attachments/assets/167c800e-37c6-4949-a796-8e33e0e4a85d">
+
 2 - Installing expo router. Follow manual installation steps here -> https://docs.expo.dev/router/installation/#manual-installation
 After installation, we will see Welcome to Expo (SS)
+
+<img width="1493" alt="Screenshot 2024-09-13 at 22 48 21" src="https://github.com/user-attachments/assets/4af56680-4679-4fc5-9790-8c2089724f8a">
+
+
 3 - Add .prettierrc file with below settings
 
 ```
@@ -22,7 +29,8 @@ After installation, we will see Welcome to Expo (SS)
 }
 ```
 
-4 - Add src/app folder and create very first files and link them together with Link from expo-router (SS)
+4 - Add src/app folder and create very first files and link them together with Link from expo-router
+
 5 - Create the Root Layout
 Finding right expo icon, visit https://icons.expo.fyi
 
@@ -71,6 +79,7 @@ Then import posts.json inside app/(tabs)/index.tsx
 ```
 
 9 - Create PostListItem component under components folder
+
 10 - Use FlatList to render PostListItem component and rencer mock data
 
 --------------------- Third commit --------------------
@@ -86,6 +95,7 @@ NativeWindStyleSheet.setOutput({
 ```
 
 12 - Update app/(tab)/new file
+
 13 - Installing image picker -> https://docs.expo.dev/versions/latest/sdk/imagepicker/
 
 --------------------- Forth commit --------------------
@@ -95,6 +105,7 @@ NativeWindStyleSheet.setOutput({
 --------------------- Fifth commit --------------------
 
 15 - Follow Assets - Cloudinary steps 1 and 2
+
 16 - Create .env file with below data and update .gitignore with .env file
 
 ```
@@ -132,6 +143,7 @@ const options = {
 --------------------- Seventh commit --------------------
 
 21 - Follow BE - Supabase steps 1, 2, 3 and 4
+
 22 - Set up Supabase, create a lib file, update .env file.
 Go to project Setting -> API on Supabase dashboard to find below keys
 
@@ -237,7 +249,9 @@ plugins: ['nativewind/babel', 'react-native-reanimated/plugin'],
 ## Assets - Cloudinary
 
 1 - Go and create an account -> https://cloudinary.com/
+
 2 - Follow documentation -> https://cloudinary.com/documentation/react_native_integration#get_started_with_react_native
+
 3 - Go settings/Upload Presets and create one for unsigned uploads
 
 ```
@@ -261,17 +275,29 @@ It will create a profile table, its policies and a trigger to create an profile 
 
 4 - Go Authentication -> Providers -> Email and disable Confirm email option and SAVE to let user to signup without confirming their emails
 
-5 - Go Table Editor and click Create a new table for our posts, name it posts and add required fields and link to profile tables. Please see below SS
+5 - Go Table Editor and click Create a new table for our posts, name it posts and add required fields and link to profile tables. Please see below
 
 6 - By default noone allow to do anything with this table, so Need to add some policy to let people use it.
+
 7 - Go to table editor -> posts ( or any table we want to edit ) and then click Add RLS Policy (Role level security) from top right and then click Creat policy from top right too.
-8 - Then select Enable insert for authenticated users only from right section for posts table and then click Save policy
-9 - Follow step 8 to create new policy from that table and select Enable read access for all users and then click Save policy
-10 - Go Table Editor and click Create a new table for our likes, name it likes and add required fields and link to profiles and posts tables. Please see below SS
-11 - Follow steps 7, 8 and 9 for policy of likes
-12 - Also add delete policy for likes, to let people to remove their likes
-13 - Update profiles table to store token, so create a new column called `push_token`
-14 - Follow steps 10 and 11 for comments
+
+8 - Then select Enable insert for authenticated users only from right section for posts table and then click Save policy.
+
+9 - Follow step 8 to create new policy from that table and select Enable read access for all users and then click Save policy.
+
+10 - Go Table Editor and click Create a new table for our likes, name it likes and add required fields and link to profiles and posts tables. Please see below.
+
+<img width="591" alt="Screenshot 2024-09-17 at 09 27 22" src="https://github.com/user-attachments/assets/f2c60e86-d410-4425-a4f9-544926b23bb6">
+
+<img width="600" alt="Screenshot 2024-09-17 at 09 27 07" src="https://github.com/user-attachments/assets/25d70094-1be5-4611-8c13-1b84f3686eab">
+
+11 - Follow steps 7, 8 and 9 for policy of likes.
+
+12 - Also add delete policy for likes, to let people to remove their likes.
+
+13 - Update profiles table to store token, so create a new column called `push_token`.
+
+14 - Follow steps 10 and 11 for comments.
 
 ## Push Notification
 
@@ -285,11 +311,16 @@ It will create a profile table, its policies and a trigger to create an profile 
 npm install -g eas-cli
 ```
 
-4 - Then run `eas init` to generate projectId and update app.json
-5 - To test follow these steps -> https://docs.expo.dev/push-notifications/push-notifications-setup/#test-using-the-push-notifications-tool
+4 - Then run `eas init` to generate projectId and update `app.json`.
+
+5 - To test follow these steps -> https://docs.expo.dev/push-notifications/push-notifications-setup/#test-using-the-push-notifications-tool.
 This is only work on a real device, not on simulator.
+
 Once scan QR code and run app on your phone, allow notification and check your console to see ExponentPushToken, Example -> `ExponentPushToken[sn7J-4PLPE0URqLIjcavT_]`
-After fill token, title and body, click send notification to see the notification on your phone. Please see SS.
+After fill token, title and body, click send notification to see the notification on your phone.
+
+<img width="405" alt="Screenshot 2024-09-23 at 14 49 40" src="https://github.com/user-attachments/assets/1458e20b-d503-4bad-86f4-506d1e819b89">
+
 6 - Before going production, you have to follow Step 3 -> https://docs.expo.dev/push-notifications/push-notifications-setup/#get-credentials-for-development-builds
 
 # MISC
