@@ -6,11 +6,18 @@
 - Cloudinary
 - Supabase
 
+<img width="128" alt="expo-logo" src="https://github.com/user-attachments/assets/44858dd9-939c-4483-82a4-b59150bff857">
+<img width="64" alt="expo-logo" src="https://github.com/user-attachments/assets/a8122b96-9219-4812-8484-59d57237b10c">
+<img width="96" alt="expo-logo" src="https://github.com/user-attachments/assets/20d5245c-e350-4a41-b182-97ed19f77066">
+<img width="96" alt="expo-logo" src="https://github.com/user-attachments/assets/e21d8786-65b2-4b5d-b13c-b32e4691dd43">
+<img width="128" alt="expo-logo" src="https://github.com/user-attachments/assets/1165c9f9-9c51-4099-942b-bc8f3820491d">
+
+
 ## SS
 
-<img width="1251" alt="Screenshot 2024-09-23 at 14 58 45" src="https://github.com/user-attachments/assets/9925fff6-559a-49de-a9bc-19501edba5c0">
+<img width="1000" alt="Screenshot 2024-09-23 at 14 58 45" src="https://github.com/user-attachments/assets/9925fff6-559a-49de-a9bc-19501edba5c0">
 
-<img width="1217" alt="Screenshot 2024-09-23 at 14 58 59" src="https://github.com/user-attachments/assets/649f682c-cfe2-4819-9acf-5a1cb44f902b">
+<img width="1000" alt="Screenshot 2024-09-23 at 14 58 59" src="https://github.com/user-attachments/assets/649f682c-cfe2-4819-9acf-5a1cb44f902b">
 
 
 # Documentation
@@ -19,12 +26,12 @@
 
 1 - Use create expo command and select blank ts template (SS)
 
-<img width="593" alt="Screenshot 2024-09-13 at 22 44 43" src="https://github.com/user-attachments/assets/167c800e-37c6-4949-a796-8e33e0e4a85d">
+<img width="500" alt="Screenshot 2024-09-13 at 22 44 43" src="https://github.com/user-attachments/assets/167c800e-37c6-4949-a796-8e33e0e4a85d">
 
 2 - Installing expo router. Follow manual installation steps here -> https://docs.expo.dev/router/installation/#manual-installation
 After installation, we will see Welcome to Expo (SS)
 
-<img width="1493" alt="Screenshot 2024-09-13 at 22 48 21" src="https://github.com/user-attachments/assets/4af56680-4679-4fc5-9790-8c2089724f8a">
+<img width="1000" alt="Screenshot 2024-09-13 at 22 48 21" src="https://github.com/user-attachments/assets/4af56680-4679-4fc5-9790-8c2089724f8a">
 
 
 3 - Add .prettierrc file with below settings
@@ -294,11 +301,11 @@ It will create a profile table, its policies and a trigger to create an profile 
 
 10 - Go Table Editor and click Create a new table for our likes, name it likes and add required fields and link to profiles and posts tables. Please see below.
 
-<img width="591" alt="Screenshot 2024-09-17 at 09 27 22" src="https://github.com/user-attachments/assets/f2c60e86-d410-4425-a4f9-544926b23bb6">
+<img width="500" alt="Screenshot 2024-09-17 at 09 27 22" src="https://github.com/user-attachments/assets/f2c60e86-d410-4425-a4f9-544926b23bb6">
 
-<img width="600" alt="Screenshot 2024-09-17 at 09 27 07" src="https://github.com/user-attachments/assets/25d70094-1be5-4611-8c13-1b84f3686eab">
+<img width="500" alt="Screenshot 2024-09-17 at 09 27 07" src="https://github.com/user-attachments/assets/25d70094-1be5-4611-8c13-1b84f3686eab">
 
-<img width="1433" alt="Screenshot 2024-09-23 at 12 50 04" src="https://github.com/user-attachments/assets/12cdbf67-5000-4884-a034-4ec06459183f">
+<img width="1000" alt="Screenshot 2024-09-23 at 12 50 04" src="https://github.com/user-attachments/assets/12cdbf67-5000-4884-a034-4ec06459183f">
 
 11 - Follow steps 7, 8 and 9 for policy of likes.
 
@@ -328,7 +335,7 @@ This is only work on a real device, not on simulator.
 Once scan QR code and run app on your phone, allow notification and check your console to see ExponentPushToken, Example -> `ExponentPushToken[sn7J-4PLPE0URqLIjcavT_]`
 After fill token, title and body, click send notification to see the notification on your phone.
 
-<img width="405" alt="Screenshot 2024-09-23 at 14 49 40" src="https://github.com/user-attachments/assets/1458e20b-d503-4bad-86f4-506d1e819b89">
+<img width="500" alt="Screenshot 2024-09-23 at 14 49 40" src="https://github.com/user-attachments/assets/1458e20b-d503-4bad-86f4-506d1e819b89">
 
 6 - Before going production, you have to follow Step 3 -> https://docs.expo.dev/push-notifications/push-notifications-setup/#get-credentials-for-development-builds
 
