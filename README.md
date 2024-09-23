@@ -6,6 +6,13 @@
 - Cloudinary
 - Supabase
 
+## SS
+
+<img width="1251" alt="Screenshot 2024-09-23 at 14 58 45" src="https://github.com/user-attachments/assets/9925fff6-559a-49de-a9bc-19501edba5c0">
+
+<img width="1217" alt="Screenshot 2024-09-23 at 14 58 59" src="https://github.com/user-attachments/assets/649f682c-cfe2-4819-9acf-5a1cb44f902b">
+
+
 # Documentation
 
 ## UI - React Native / Expo
@@ -290,6 +297,8 @@ It will create a profile table, its policies and a trigger to create an profile 
 <img width="591" alt="Screenshot 2024-09-17 at 09 27 22" src="https://github.com/user-attachments/assets/f2c60e86-d410-4425-a4f9-544926b23bb6">
 
 <img width="600" alt="Screenshot 2024-09-17 at 09 27 07" src="https://github.com/user-attachments/assets/25d70094-1be5-4611-8c13-1b84f3686eab">
+
+<img width="1433" alt="Screenshot 2024-09-23 at 12 50 04" src="https://github.com/user-attachments/assets/12cdbf67-5000-4884-a034-4ec06459183f">
 
 11 - Follow steps 7, 8 and 9 for policy of likes.
 
