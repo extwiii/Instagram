@@ -230,6 +230,10 @@ plugins: ['nativewind/babel', 'react-native-reanimated/plugin'],
 
 --------------------- Nineteenth commit --------------------
 
+53 - Update app.json for Splash screen and app icon
+
+--------------------- Twentieth commit --------------------
+
 ## Assets - Cloudinary
 
 1 - Go and create an account -> https://cloudinary.com/
