@@ -17,7 +17,7 @@ export async function sendLikeNotification(like: LikeRecord) {
     to: pushToken,
     sound: 'default',
     title: 'Someone liked your post',
-    body: `${data?.posts?.profiles.username} liked your post!`,
+    subtitle: `${data?.posts?.profiles.username} liked your post!`,
     data: { postId: data.posts.id },
   }
   sendPushNotification(message)

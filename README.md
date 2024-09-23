@@ -210,6 +210,26 @@ Make sure to use "tailwindcss": "3.3.2", without ^ character if see some nativew
 
 --------------------- Eighteenth commit --------------------
 
+48 - Follow BE - Supabase step 13
+49 - Update plugins of `babel.config.js` for reanimated
+
+```
+plugins: ['nativewind/babel', 'react-native-reanimated/plugin'],
+```
+
+50 - Use `https://gorhom.dev/react-native-bottom-sheet/usage` for bottom sheets component, see examples, Use Modal version to hide tabbars.
+
+51 - Make sure to wrap our layouts with these Providers
+
+```
+      <GestureHandlerRootView>
+        <BottomSheetModalProvider>
+```
+
+52 - Update (tabs)/index file to show bottomsheets with comments, and let user to send comments as well as likes comments
+
+--------------------- Nineteenth commit --------------------
+
 ## Assets - Cloudinary
 
 1 - Go and create an account -> https://cloudinary.com/
@@ -244,9 +264,10 @@ It will create a profile table, its policies and a trigger to create an profile 
 8 - Then select Enable insert for authenticated users only from right section for posts table and then click Save policy
 9 - Follow step 8 to create new policy from that table and select Enable read access for all users and then click Save policy
 10 - Go Table Editor and click Create a new table for our likes, name it likes and add required fields and link to profiles and posts tables. Please see below SS
-11 - Follow step 7, 8 and 9 for policy of likes
+11 - Follow steps 7, 8 and 9 for policy of likes
 12 - Also add delete policy for likes, to let people to remove their likes
 13 - Update profiles table to store token, so create a new column called `push_token`
+14 - Follow steps 10 and 11 for comments
 
 ## Push Notification
 

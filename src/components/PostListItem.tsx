@@ -1,23 +1,26 @@
 import { useEffect, useState, useCallback } from 'react'
 import { View, Text, Pressable } from 'react-native'
 import { Ionicons, Feather, AntDesign } from '@expo/vector-icons'
-import { AdvancedImage } from 'cloudinary-react-native'
-import { thumbnail } from '@cloudinary/url-gen/actions/resize'
-import { focusOn } from '@cloudinary/url-gen/qualifiers/gravity'
-import { FocusOn } from '@cloudinary/url-gen/qualifiers/focusOn'
-
-import { cld } from '@/src/lib/cloudinary'
 
 import { supabase } from '@/src/lib/supabase'
 import { useAuth } from '@/src/providers/AuthProvider'
 import { Post, LikeRecord } from '@/src/lib/types'
 
 import PostContent from './PostContent'
+import Avatar from './Avatar'
 import { sendLikeNotification } from '../utils/notifications'
 
 const DOUBLE_PRESS_DELAY = 500
 
-export default function PostListItem({ post }: { post: Post }) {
+type PostListItemProps = {
+  post: Post
+  handleCommentPress: (post: Post) => void
+}
+
+export default function PostListItem({
+  post,
+  handleCommentPress,
+}: PostListItemProps) {
   const [isLiked, setIsLiked] = useState(false)
   const [likeRecord, setLikeRecord] = useState<LikeRecord | null>(null)
   const [lastPressed, setLastPressed] = useState(0)
@@ -65,11 +68,6 @@ export default function PostListItem({ post }: { post: Post }) {
     }
   }
 
-  const avatar = cld.image(post.user.avatar_url || 'avatar_fwm2gr')
-  avatar.resize(
-    thumbnail().width(48).height(48).gravity(focusOn(FocusOn.face()))
-  )
-
   // Implement like when user double tab
   const handlePress = useCallback(() => {
     const time = new Date().getTime()
@@ -87,10 +85,7 @@ export default function PostListItem({ post }: { post: Post }) {
       <View className="bg-white">
         {/* Header */}
         <View className="p-3 flex-row items-center gap-2">
-          <AdvancedImage
-            cldImg={avatar}
-            className="w-12 aspect-square rounded-full"
-          />
+          <Avatar url={post.user.avatar_url} />
           <Text className="font-semibold">
             {post.user.username || 'New user'}
           </Text>
@@ -101,28 +96,39 @@ export default function PostListItem({ post }: { post: Post }) {
 
         {/* Icons */}
         <View className="flex-row">
-          <View className="flex-row p-3 gap-3">
-            <AntDesign
-              onPress={() => setIsLiked(!isLiked)}
-              name={isLiked ? 'heart' : 'hearto'}
-              size={20}
-              color={isLiked ? 'crimson' : 'black'}
-            />
-            {/* TODO: Implement comments */}
-            <Ionicons name="chatbubble-outline" size={20} />
+          <View className="flex-row p-3">
+            <View className="flex-row pr-2 gap-1">
+              <Pressable onPress={() => setIsLiked(!isLiked)}>
+                <AntDesign
+                  name={isLiked ? 'heart' : 'hearto'}
+                  size={20}
+                  color={isLiked ? 'crimson' : 'black'}
+                />
+              </Pressable>
+              <Text className="font-semibold pt-0.5">
+                {post.likes?.[0]?.count || 0}
+              </Text>
+            </View>
+
+            {/** Comments */}
+            <View className="flex-row pr-2 gap-1">
+              <Pressable onPress={() => handleCommentPress(post)}>
+                <Ionicons name="chatbubble-outline" size={20} />
+              </Pressable>
+              <Text className="font-semibold pt-0.5">
+                {post.comments?.[0]?.count || 0}
+              </Text>
+            </View>
             <Feather name="send" size={20} />
           </View>
           <View className="ml-auto p-3">
             <Feather name="bookmark" size={20} />
           </View>
         </View>
-        <View className="px-3 gap-1">
-          <Text className="font-semibold">
-            {post.likes?.[0]?.count || 0} likes
-          </Text>
+        <View className="px-3">
           <Text>
             <Text className="font-semibold">
-              {post.user.username || 'New user'}
+              {post.user.username || 'New user'}{' '}
             </Text>
             {post.caption}
           </Text>
